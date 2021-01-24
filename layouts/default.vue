@@ -28,7 +28,7 @@
       <v-container class="py-0 fill-height">
         <v-app-bar-nav-icon
           @click.stop="drawer = !drawer"
-          class="hidden-lg-only"
+          class="hidden-lg-and-up"
         ></v-app-bar-nav-icon>
         <v-toolbar-title class="pl-7">Learntera</v-toolbar-title>
         <v-spacer></v-spacer>
@@ -54,6 +54,7 @@
     <v-main>
       <!-- Provides the application the proper gutter -->
       <Nuxt />
+      <div class="my-9"></div>
     </v-main>
 
     <v-bottom-navigation fixed app color="primary" class="hidden-md-and-up">
@@ -66,9 +67,7 @@
     <v-footer padless class="hidden-sm-and-down" elevation="10">
       <v-card class="flex" flat>
         <v-card-title>
-          <strong class="subheading"
-            >Get connected with us on social networks!</strong
-          >
+          <h5>Ikuti Learntera Pada Sosial Media Lainnya</h5>
           <v-spacer></v-spacer>
           <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
             <v-icon size="24px" color="primary">
@@ -77,7 +76,7 @@
           </v-btn>
         </v-card-title>
         <v-card-text class="py-2 white--text text-center primary">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — <strong>Learntera</strong>
         </v-card-text>
       </v-card>
     </v-footer>

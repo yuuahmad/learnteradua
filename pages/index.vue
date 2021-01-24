@@ -25,7 +25,7 @@
     <v-row class="py-6">
       <v-col cols="12" md="4" v-for="kartu in kartus" :key="kartu">
         <v-card elevation="2" shaped class="my-2">
-          <v-img height="250" :src="kartu.gambar"></v-img>
+          <v-img :src="kartu.gambar" alt="ini gambar saya"></v-img>
           <v-card-title> {{ kartu.utama }} </v-card-title>
           <v-card-subtitle> {{ kartu.subutama }} </v-card-subtitle>
           <v-card-text> {{ kartu.sampingan }} </v-card-text>
@@ -180,21 +180,21 @@ export default {
       tabitems: ['Appetizers', 'Entrees', 'Deserts'],
       kartus: [
         {
-          gambar: '~/assets/img/80580919_p0.jpg',
+          gambar: require('~/assets/img/illust_71911479_20201216_154312.jpg'),
           utama: 'Kata Pertama',
           subutama: 'ini adalah kata subutama saya pada card saya',
           sampingan:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, similique? Aspernatur reprehenderit fugiat autem magnam cumque dignissimos ea repellat animi unde, fuga inventore in pariatur voluptatem sequi. Rem, magni dignissimos?',
         },
         {
-          gambar: 'https://cdn.vuetifyjs.com/images/cards/cooking.png',
+          gambar: require('~/assets/img/85054286_p0.jpg'),
           utama: 'Kata Utama',
           subutama: 'ini adalah kata subutama saya pada card saya',
           sampingan:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, similique? Aspernatur reprehenderit fugiat autem magnam cumque dignissimos ea repellat animi unde, fuga inventore in pariatur voluptatem sequi. Rem, magni dignissimos?',
         },
         {
-          gambar: 'https://cdn.vuetifyjs.com/images/cards/cooking.png',
+          gambar: require('~/assets/img/86700057_p0.jpg'),
           utama: 'Ini Yang Pertama',
           subutama: 'ini adalah kata subutama saya pada card saya',
           sampingan:

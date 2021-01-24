@@ -1,11 +1,11 @@
 <template>
   <v-container>
     <v-card class="mx-16 my-6 pa-6 text-center">
-      <h2>Login</h2>
+      <h2>Register</h2>
       <p>
-        anda belum memiliki akun? silahkan
-        <v-btn small color="primary" text class="mx-0 px-0" to="/register"
-          >Register</v-btn
+        sudah punya akun? silahkan
+        <v-btn small color="primary" text class="mx-0 px-0" to="/login"
+          >Login</v-btn
         >
       </p>
 
@@ -30,8 +30,8 @@
         ></v-text-field>
 
         <div class="mt-10 mb-6">
-          <v-btn color="primary" class="mx-2"> login </v-btn>
-          <v-btn color="secondary" class="mx-2"> Lupa password </v-btn>
+          <v-btn color="primary" class="mx-2"> register </v-btn>
+
           <v-btn color="error" class="mx-2" @click="reset"> Reset Form </v-btn>
         </div>
       </v-form>
