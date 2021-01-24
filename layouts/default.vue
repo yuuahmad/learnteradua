@@ -7,15 +7,12 @@
           <v-list-item-subtitle> subtext </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
-
       <v-divider></v-divider>
-
       <v-list dense nav>
         <v-list-item v-for="item in items" :key="item.title" link :to="item.to">
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color="primary">{{ item.icon }}</v-icon>
           </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
@@ -27,22 +24,29 @@
       </v-list-item>
     </v-navigation-drawer>
 
-    <v-app-bar app dense color="primary" elevate-on-scroll fixed>
+    <v-app-bar app dense elevate-on-scroll fixed>
       <v-container class="py-0 fill-height">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
+        <v-app-bar-nav-icon
+          @click.stop="drawer = !drawer"
+          class="hidden-lg-only"
+        ></v-app-bar-nav-icon>
         <v-toolbar-title class="pl-7">Learntera</v-toolbar-title>
-
         <v-spacer></v-spacer>
-
-        <v-btn text class="ma-2">
+        <v-btn
+          text
+          class="hidden-md-and-down"
+          v-for="item in items"
+          :key="item"
+          link
+          :to="item.to"
+        >
+          {{ item.title }}
+        </v-btn>
+        <v-btn text class="hidden-sm-and-down" to="/cari">
           <v-icon left>mdi-magnify</v-icon>
-          Cari Apapun Disini
+          Cari
         </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
+        <v-switch v-model="goDark" class="mb-n5 hidden-md-and-down"></v-switch>
       </v-container>
     </v-app-bar>
 
@@ -52,8 +56,30 @@
       <Nuxt />
     </v-main>
 
-    <v-footer app>
-      <!-- -->
+    <v-bottom-navigation fixed app color="primary" class="hidden-md-and-up">
+      <v-btn v-for="(button, i) in bottom" :key="i" :to="button.link">
+        <span> {{ button.kata }} </span>
+        <v-icon> {{ button.ikon }} </v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+
+    <v-footer padless class="hidden-sm-and-down" elevation="10">
+      <v-card class="flex" flat>
+        <v-card-title>
+          <strong class="subheading"
+            >Get connected with us on social networks!</strong
+          >
+          <v-spacer></v-spacer>
+          <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
+            <v-icon size="24px" color="primary">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-title>
+        <v-card-text class="py-2 white--text text-center primary">
+          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        </v-card-text>
+      </v-card>
     </v-footer>
   </v-app>
 </template>
@@ -62,6 +88,31 @@
 export default {
   data() {
     return {
+      icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
+      value: 1,
+      bottom: [
+        {
+          ikon: 'mdi-home',
+          kata: 'Home',
+          link: '/',
+        },
+
+        {
+          ikon: 'mdi-border-color',
+          kata: 'Ujian',
+          link: '/ujian',
+        },
+        {
+          ikon: 'mdi-comment',
+          kata: 'Diskusi',
+          link: '/diskusi',
+        },
+        {
+          ikon: 'mdi-magnify',
+          kata: 'Cari',
+          link: '/cari',
+        },
+      ],
       goDark: true,
       clipped: false,
       drawer: false,
@@ -74,32 +125,32 @@ export default {
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-book-open-blank-variant',
           title: 'Belajar',
           to: '/belajar',
         },
         {
-          icon: 'mdi-view-dashboard',
+          icon: 'mdi-border-color',
           title: 'Ujian',
           to: '/ujian',
         },
         {
-          icon: 'mdi-image',
+          icon: 'mdi-comment',
           title: 'Diskusi',
           to: '/diskusi',
         },
         {
-          icon: 'mdi-help-box',
+          icon: 'mdi-format-align-left',
           title: 'Artikel',
           to: '/artikel',
         },
         {
-          icon: 'mdi-help-box',
+          icon: 'mdi-github',
           title: 'Kontak Tim',
           to: '/kontaktim',
         },
         {
-          icon: 'mdi-help-box',
+          icon: 'mdi-account-circle',
           title: 'Login',
           to: '/login',
         },
