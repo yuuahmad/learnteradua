@@ -19,6 +19,7 @@
           md="4"
           sm="6"
           lg="3"
+          xl="2"
           cols="12"
           v-for="diskusi in diskusis"
           :key="diskusi"

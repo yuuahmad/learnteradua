@@ -36,7 +36,7 @@
         </v-col>
         <v-col md="6" sm="6" cols="12" class="pa-10">
           <v-text-field
-            label="cari prodi atau matkul disini"
+            label="cari matkul atau matkul disini"
             append-outer-icon="mdi-magnify"
           ></v-text-field>
           <v-btn>cari</v-btn>
@@ -49,17 +49,18 @@
       <v-divider class="my-4"> </v-divider>
       <v-row class="mb-6">
         <v-col
-          md="3"
-          sm="4"
-          lg="2"
+          md="4"
+          sm="6"
+          lg="3"
+          xl="2"
           cols="12"
-          v-for="prodi in prodis"
-          :key="prodi"
+          v-for="(matkul, i) in matkuls"
+          :key="i"
         >
           <v-card>
-            <v-card-title> {{ prodi.prodi }} </v-card-title>
-            <v-card-text> {{ prodi.keterangan }} </v-card-text>
-            <v-btn class="ma-4" :to="prodi.to"> {{ prodi.tombol }} </v-btn>
+            <v-card-title> {{ matkul.matkul }} </v-card-title>
+            <v-card-text> {{ matkul.keterangan }} </v-card-text>
+            <v-btn class="ma-4" :to="matkul.to"> {{ matkul.tombol }} </v-btn>
           </v-card>
         </v-col>
       </v-row>
@@ -71,34 +72,34 @@
 export default {
   data() {
     return {
-      prodis: [
+      matkuls: [
         {
-          prodi: 'Kelas',
-          keterangan: 'belajar tentang prodi elektro disini gan',
+          matkul: 'Matematika Dasar 1',
+          keterangan: 'belajar tentang matkul elektro disini gan',
           tombol: 'Buka',
           to: '/buka',
         },
         {
-          prodi: 'Kelas',
-          keterangan: 'belajar tentang prodi elektro disini gan',
+          matkul: 'Kimia Dasar 1 ',
+          keterangan: 'belajar tentang matkul elektro disini gan',
           tombol: 'Buka',
           to: '/buka',
         },
         {
-          prodi: 'Kelas',
-          keterangan: 'belajar tentang prodi elektro disini gan',
+          matkul: 'Fisika Dasar 1',
+          keterangan: 'belajar tentang matkul elektro disini gan',
           tombol: 'Buka',
           to: '/buka',
         },
         {
-          prodi: 'Kelas',
-          keterangan: 'belajar tentang prodi elektro disini gan',
+          matkul: 'Pemrograman C++',
+          keterangan: 'belajar tentang matkul elektro disini gan',
           tombol: 'Buka',
           to: '/buka',
         },
         {
-          prodi: 'Kelas',
-          keterangan: 'belajar tentang prodi elektro disini gan',
+          matkul: 'Fisika Dasar 2',
+          keterangan: 'belajar tentang matkul elektro disini gan',
           tombol: 'Buka',
           to: '/buka',
         },

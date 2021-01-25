@@ -9,7 +9,7 @@
       </v-list-item>
       <v-divider></v-divider>
       <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link :to="item.to">
+        <v-list-item v-for="(item, i) in items" :key="i" link :to="item.to">
           <v-list-item-icon>
             <v-icon color="primary">{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -35,8 +35,8 @@
         <v-btn
           text
           class="hidden-md-and-down"
-          v-for="item in items"
-          :key="item"
+          v-for="(item, i) in items"
+          :key="i"
           link
           :to="item.to"
         >
@@ -69,7 +69,7 @@
         <v-card-title>
           <h5>Ikuti Learntera Pada Sosial Media Lainnya</h5>
           <v-spacer></v-spacer>
-          <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
+          <v-btn v-for="(icon, i) in icons" :key="i" class="mx-4" dark icon>
             <v-icon size="24px" color="primary">
               {{ icon }}
             </v-icon>

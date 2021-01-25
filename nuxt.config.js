@@ -2,7 +2,7 @@ export default {
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: 'Learntera - %s',
+    titleTemplate: 'Learntera|%s',
     title: 'Learntera',
     meta: [
       { charset: 'utf-8' },
@@ -37,38 +37,39 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          // primary: '#666699',
-          // secondary: '#66FFFF',
-          // accent: colors.grey.darken3,
-          // info: colors.teal.lighten1,
-          // warning: colors.amber.base,
-          // error: colors.deepOrange.accent4,
-          // success: colors.green.accent3
-        },
-        light: {
-          // primary: '#66FFFF',
-          // secondary: '#0080FF',
-          // accent: colors.blue.darken2,
-          // info: colors.teal.lighten1,
-          // warning: colors.amber.base,
-          // error: colors.deepOrange.accent4,
-          // success: colors.green.accent3
-        }
-      }
-    }
-  },
+  // vuetify: {
+  //   customVariables: ['~/assets/variables.scss'],
+  //   theme: {
+  //     dark: true,
+  //     themes: {
+  //       dark: {
+  //         // primary: '#666699',
+  //         // secondary: '#66FFFF',
+  //         // accent: colors.grey.darken3,
+  //         // info: colors.teal.lighten1,
+  //         // warning: colors.amber.base,
+  //         // error: colors.deepOrange.accent4,
+  //         // success: colors.green.accent3
+  //       },
+  //       light: {
+  //         // primary: '#66FFFF',
+  //         // secondary: '#0080FF',
+  //         // accent: colors.blue.darken2,
+  //         // info: colors.teal.lighten1,
+  //         // warning: colors.amber.base,
+  //         // error: colors.deepOrange.accent4,
+  //         // success: colors.green.accent3
+  //       }
+  //     }
+  //   }
+  // },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

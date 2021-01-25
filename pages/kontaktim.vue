@@ -27,20 +27,20 @@
       <v-divider class="my-4"> </v-divider>
       <v-row class="mb-6">
         <v-col
-          md="6"
           sm="6"
-          lg="4"
-          xl="3"
+          md="4"
+          lg="3"
+          xl="2"
           cols="12"
-          v-for="tim in tims"
-          :key="tim"
+          v-for="(tim, i) in tims"
+          :key="i"
         >
           <v-card class="pa-6 text-center">
-            <v-avatar color="primary" size="150" class="ma-3">
-              <img
-                :src="require('../assets/img/86700057_p0.jpg')"
-                alt="gambar saya"
-            /></v-avatar>
+            <img
+              :src="require('../assets/img/86700057_p0.jpg')"
+              alt="gambar saya"
+              height="150"
+            />
             <h2>{{ tim.nama }}</h2>
             <v-divider class="ma-3"></v-divider>
             <p>Prodi : {{ tim.prodi }}</p>
