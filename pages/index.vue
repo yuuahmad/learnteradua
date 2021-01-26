@@ -35,7 +35,7 @@
 
     <v-card class="my-6">
       <v-row align="center">
-        <v-col md="6" sm="6" cols="12">
+        <v-col md="6" cols="12">
           <v-card-title>Gabung Tim Learntera Sekarang </v-card-title>
           <v-card-subtitle>kami butuh dukungan kalian</v-card-subtitle>
           <v-card-text>
@@ -58,7 +58,7 @@
             </p>
           </v-card-text>
         </v-col>
-        <v-col md="6" sm="6">
+        <v-col md="6">
           <v-img
             lazy-src="https://picsum.photos/id/11/10/6"
             src="https://picsum.photos/id/11/500/300"
@@ -107,32 +107,32 @@
     </v-row>
 
     <v-card class="my-6">
-      <v-card-title class="text-center justify-center py-3">
-        <h1 class="font-weight-bold display-1">Tentang ITERA</h1>
-      </v-card-title>
-      <v-tabs v-model="tab" background-color="transparent" grow>
-        <v-tab v-for="(tabitem, i) in tabitems" :key="i">
-          {{ tabitem }}
-        </v-tab>
-      </v-tabs>
-      <v-tabs-items v-model="tab">
-        <v-tab-item v-for="(tabitem, i) in tabitems" :key="i">
-          <v-row align="center">
-            <v-col md="6" sm="6">
-              <v-card flat>
-                <v-card-title>Ini Adlah Judul Saya</v-card-title>
-                <v-card-text>{{ lorems }} </v-card-text>
-              </v-card>
-            </v-col>
-            <v-col md="6" sm="6">
-              <v-img
-                src="https://picsum.photos/id/11/500/300"
-                class="ma-3"
-              ></v-img>
-            </v-col>
-          </v-row>
-        </v-tab-item>
-      </v-tabs-items>
+      <h1 class="display-1 text-center py-3">Tentang ITERA</h1>
+      <v-row>
+        <v-col xl="1" lg="2" sm="3" cols="12">
+          <v-list rounded>
+            <v-list-item-group v-model="tab" color="primary">
+              <v-list-item v-for="(tabitem, i) in tabitems" :key="i">
+                <v-list-item-content>
+                  <v-list-item-title v-text="tabitem"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-col>
+        <v-col xl="11" lg="10" sm="9">
+          <v-tabs-items v-model="tab">
+            <v-tab-item
+              v-for="(tabitem, i) in tabitems"
+              :key="i"
+              class="mx-6 my-2"
+            >
+              <h2 class="my-2">Ini Adlah Judul Saya</h2>
+              <p>{{ lorems }}</p>
+            </v-tab-item>
+          </v-tabs-items>
+        </v-col>
+      </v-row>
     </v-card>
 
     <h1 class="text-center">Fakta Learntera</h1>
@@ -146,7 +146,7 @@
         class="text-center"
       >
         <h2>{{ parameter.judul }}</h2>
-        <h3>{{ parameter.angka }}</h3>
+        <h3 class="display-3">{{ parameter.angka }}</h3>
         <p>
           {{ parameter.keterangan }}
         </p>
@@ -162,6 +162,8 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 export default {
   data() {
     return {
+      lorems:
+        '    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores neque, aliquam vero recusandae facere optio atque debitis ipsa itaque delectus ratione molestias laudantium numquam ipsum, dolor quo, enim quasi blanditiis.',
       parameters: [
         {
           judul: 'Matkul',
@@ -188,7 +190,7 @@ export default {
             'siap menggunakan learntera? segera daftarkan diri kalian dengan menggunakan email itera. pendaftaran tidak dipungut biaya apapun dan data kalian akan aman',
         },
       ],
-      tab: null,
+      tab: 0,
       tabitems: ['Appetizers', 'Entrees', 'Deserts'],
       kartus: [
         {

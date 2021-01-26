@@ -30,7 +30,7 @@
           @click.stop="drawer = !drawer"
           class="hidden-lg-and-up"
         ></v-app-bar-nav-icon>
-        <v-toolbar-title class="pl-7">Learntera</v-toolbar-title>
+        <v-btn text link to="/"> Learntera </v-btn>
         <v-spacer></v-spacer>
         <v-btn
           text
@@ -118,11 +118,6 @@ export default {
       fixed: false,
       group: null,
       items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Home',
-          to: '/',
-        },
         {
           icon: 'mdi-book-open-blank-variant',
           title: 'Belajar',
